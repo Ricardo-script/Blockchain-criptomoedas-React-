@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { Input } from 'reactstrap'
 import Col from 'react-bootstrap/Col';
 import { Formulario, AreaButton } from './styled';
 import Modal from 'react-modal';
 import MaskedFormControl from 'react-bootstrap-maskedinput'
+import info from '../../assets/info.png';
+import tick from '../../assets/tick.png';
 
 /*estilizar modal*/
 const customStyles = {
@@ -17,10 +20,14 @@ const customStyles = {
      transform: 'translate(-50%, -50%)',
      //background: 'gray',
      width:'55%',
-     height:'60%',
+     height:'55%',
    }
 
  };
+
+ const customButtons ={
+    display:'flex',
+ }
 
 class Cadastro extends Component{
     constructor(props){
@@ -43,68 +50,182 @@ class Cadastro extends Component{
             msg: '',
             resposta:'',
             msgerro:'',
+            btnvoltar:'Corrigir',
+            btnacesso:'Sair',
+            autenticado:false,
         }   
 
-        this.btnCadastrarOnClick = this.btnCadastrarOnClick.bind(this);       
+        this.btnCadastrarOnClick = this.btnCadastrarOnClick.bind(this);
+        this.pageLogin = this.pageLogin.bind(this);       
     }
     
 
     async btnCadastrarOnClick(){
+        //validação de campos vazios:
+        if(this.state.name === ''){
+            this.setState({msg: 'Por favor preeencher o campo Nome',
+             openModal: true, resposta:'Por favor conferir os campos!',
+             msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+            });
+            return;
+        }
+
+        if(this.state.code === ''){
+            this.setState({msg: 'Por favor preeencher o campo CPF',
+             openModal: true, resposta:'Por favor conferir os campos!',
+             msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+
+        if(this.state.email === ''){
+            this.setState({msg: 'Por favor preeenchero campo E-mail',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.password === ''){
+            this.setState({msg: 'Por favor preeencher o campo com sua senha',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.born_date === ''){
+            this.setState({msg: 'Por favor preeencher o campo com sua data de nascimento',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+        }
+        if(this.state.cellphone === ''){
+            this.setState({msg: 'Por favor preeencher o campo Celular',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.telephone === ''){
+            this.setState({msg: 'Por favor preeencher o campo Telefone',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.city === ''){
+            this.setState({msg: 'Por favor preeencher o campo Cidade',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.postal_code === ''){
+            this.setState({msg: 'Por favor preeencher o campo CEP',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.number === ''){
+            this.setState({msg: 'Por faVor preeencher o campo Número',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.state === ''){
+            this.setState({msg: 'Por favor preeencher o campo Estado',
+            openModal: true, resposta:'Por favor conferir os campos!',
+            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
+        });
+            return;
+        }
+        if(this.state.password !== this.state.repeteSenha){
+            alert('Repetição de senha incorreta por favor verificar!');
+            this.setState({openModal:false});
+            return;
+        }
+
         const data = JSON.stringify(this.state);
         console.log(data);
         let url = 'https://clients-control-api.herokuapp.com/clients-control-api/client'
 
-            const response =  await fetch(url,{
-                method:'POST',
-                headers:{
-                    'content-type': 'application/json'
-                },
-                body: data
-            })
-            if(response.status === 400){
-                const respostaJson = await response.json();
-                console.log(respostaJson);
-                //alert(respostaJson.error.error_message);
-                this.setState({msg: respostaJson.error.error_message});
-                this.setState({resposta:'Por favor conferir os campos!'});
-                this.setState({msgerro:'Para continuar o cadastro favor corrigir os campos faltantes!'});
-                
-            }
-            if(response.status === 201){
-                if(this.state.password === this.state.repeteSenha){
-                    const respostaJson = await response.json();
-                    console.log(respostaJson);
-                    //alert('Usuário cadastrado com sucesso!');
-                    this.setState({resposta:'Usuário cadastrado com sucesso!'});
-                    this.setState({msgerro:'Seja muito bem vindo!'})
-                    this.props.history.push('/login');
-                    alert('igual');
-                }else{
-                    alert('Repetição de senha incorreta por favor verificar!');
-                    this.setState({openModal:false});
-                    return;
-                }
-            }
+        const response =  await fetch(url,{
+            method:'POST',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: data
+        })
 
-        console.log(response)
-        this.setState({openModal:true});
+        // verificação no servidor:
+        if(response.status === 400){
+            const respostaJson = await response.json();
+            //console.log(respostaJson);
+            //alert(respostaJson.error.error_message);
+            this.setState({msg: respostaJson.error.error_message});
+            this.setState({resposta:'Por favor conferir os campos!'});
+            this.setState({msgerro:'Para continuar o cadastro por favor corrigir os campos!'}); 
+        }
+        if(response.status === 201){
+            //const respostaJson = await response.json();
+            this.setState({msg: 'Seja muito bem vindo!',
+                resposta:'Usuário cadastrado com sucesso',
+                msgerro:'Ficamos felizes por te-lo conosco!',
+                btnacesso:'Login',
+                btnvoltar:'Voltar',
+                autenticado:true
+            });
+        }
+           
+        this.setState({openModal: true});
+        
     }
+
+    pageLogin(){
+        this.props.history.push('/login');  
+    }
+
 
     render(){
         return(
             <Formulario>
+
                 <Modal isOpen={this.state.openModal} style={customStyles}>
-                    <h2>{this.state.resposta}</h2>
+                    <h2>{this.state.resposta}</h2><hr/>
                     <p>{this.state.msgerro}</p>
-                    <span>{this.state.msg}</span>
-                    <br/>            
-                    <Button style={{
-                        margin: '30% 0 0 75%',
-                        width: '20%',
-                    }} 
-                    onClick={() => this.setState({openModal:false})}>
-                        Ok
-                    </Button>
+                    <div style={{display: "flex", 
+                        flexDirection:'row', 
+                        alignItems:'center',
+                    }}>
+                        <span style={{color:'red'}}>{this.state.msg}</span>
+                        <br/>
+                        <img src={this.state.autenticado ? tick : info} alt="100" width="15%" style={{
+                            marginLeft:'30%'
+                        }}/>
+                    </div><hr/>
+                    <div style={customButtons}>          
+                        <Button style={{
+                            margin: '7% 0 0 45%',
+                            width: '20%',
+                        }} 
+                        onClick={() => this.setState({openModal:false})}>
+                           {this.state.btnvoltar}
+                        </Button>
+
+                        <Button style={{
+                            height:'20%',
+                            width: '20%',
+                            background:'#F06262',
+                            margin:'7% 0 0 5%',
+                            border:'1px solid #D91C1C',
+                        }} 
+                        onClick={this.pageLogin}>
+                            {this.state.btnacesso}
+                        </Button>
+                    </div>
+
+
                 </Modal>
 
                 <Form>
@@ -151,9 +272,9 @@ class Cadastro extends Component{
                             <Form.Label>Celular</Form.Label>
                             <MaskedFormControl
                                 type="text"
-                                mask='1-1111-1111'
+                                mask='(11)1-1111-1111'
                                 className="inputCelular"
-                                placeholder="9-0000-0000"
+                                placeholder="(00)0-0000-0000"
                                 onChange={(e) => this.setState({cellphone: e.target.value})}
                             />
                             </Form.Group>
@@ -161,9 +282,9 @@ class Cadastro extends Component{
                                 <Form.Label>Telefone</Form.Label>
                                 <MaskedFormControl
                                     type="text"
-                                    mask='1111-1111' 
+                                    mask='(11)1111-1111' 
                                     className="imputTelefone"
-                                    placeholder="0000-0000"
+                                    placeholder="(00)0000-0000"
                                     onChange={(e) => this.setState({telephone: e.target.value})} 
                                 />
                         </Form.Group>
@@ -202,13 +323,34 @@ class Cadastro extends Component{
                             </Form.Group>
                             <Form.Group as={Col} controlId="formGridPassword">
                                 <Form.Label>Estado</Form.Label>
-                                <Form.Control 
-                                    type="text" 
-                                    placeholder="UF:"
-                                    maxLength={2}
+                                <Input type="select" name="select" 
+                                    id="exampleSelect"
+                                    placeholder="UF"
                                     className="infoStyle"
+                                    value="SP"
                                     onChange={(e) => this.setState({state: e.target.value})} 
-                                />
+                                >
+                                    <option value="SP">SP</option>
+                                    <option value="SP">AC</option>
+                                    <option value="SP">AL</option>
+                                    <option value="SP">AP</option>
+                                    <option value="SP">AM</option>
+                                    <option value="SP">BA</option>
+                                    <option value="SP">CE</option>
+                                    <option value="SP">ES</option>
+                                    <option value="SP">GO</option>
+                                    <option value="SP">MA</option>
+                                    <option value="SP">MT</option>
+                                    <option value="SP">MS</option>
+                                    <option value="SP">MG</option>
+                                    <option value="SP">PA</option>
+                                    <option value="SP">PR</option>
+                                    <option value="SP">PE</option>
+                                    <option value="SP">PI</option>
+                                    <option value="SP">RJ</option>
+                                    <option value="SP">RN</option>
+                                    <option value="SP">RS</option>
+                                </Input>
                             </Form.Group>
                         </Form.Row>
                       
