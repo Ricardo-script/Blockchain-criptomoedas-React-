@@ -11,18 +11,17 @@ import tick from '../../assets/tick.png';
 
 /*estilizar modal*/
 const customStyles = {
-     content : {
-     top: '50%',
-     left: '50%',
-     right: 'auto',
-     bottom: 'auto',
-     marginRight: '-50%',
-     transform: 'translate(-50%, -50%)',
-     //background: 'gray',
-     width:'55%',
-     height:'55%',
-   }
-
+    content : {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    //background: 'gray',
+    // width:'55%',
+    //height:'55%',
+    },
  };
 
  const customButtons ={
@@ -207,7 +206,7 @@ class Cadastro extends Component{
                     <div style={customButtons}>          
                         <Button style={{
                             margin: '7% 0 0 45%',
-                            width: '20%',
+                            width: '25%',
                         }} 
                         onClick={() => this.setState({openModal:false})}>
                            {this.state.btnvoltar}
@@ -215,7 +214,7 @@ class Cadastro extends Component{
 
                         <Button style={{
                             height:'20%',
-                            width: '20%',
+                            width: '25%',
                             background:'#F06262',
                             margin:'7% 0 0 5%',
                             border:'1px solid #D91C1C',
