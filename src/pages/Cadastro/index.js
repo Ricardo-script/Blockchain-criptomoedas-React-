@@ -181,8 +181,9 @@ class Cadastro extends Component{
         
     }
 
+        
     pageLogin(){
-        this.props.history.push('/dashboard');  
+        this.props.history.push('/dashboard'); // 
     }
 
 
