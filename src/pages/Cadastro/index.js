@@ -183,7 +183,7 @@ class Cadastro extends Component{
 
 
     pageLogin(){
-        this.props.history.push('/dashboard'); //push heroku
+        this.props.history.push('/dashboard'); 
     }
 
 
