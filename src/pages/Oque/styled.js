@@ -53,32 +53,32 @@ export const Post = styled.div`
     align-items: center;
 
     .textoBase{
-      text-align:center;
-      width:85%;
+      text-align:justify;
+      width:50%; @media(max-width: 1045px){width:90%};
       padding:15px;
       display:flex;
       margin-left:-350px;
       opacity:0;
     }
     .textoBase2{
-      text-align:center;
-      width:85%;
+      text-align:justify;
+      width:50%; @media(max-width: 1045px){width:90%};
       padding:15px;
       display:flex;
       margin-right:-350px;
       opacity:0;
     }
     .textoBase3{
-      text-align:center;
-      width:85%;
+      text-align:justify;
+      width:50%; @media(max-width: 1045px){width:90%};
       padding:15px;
       display:flex;
       margin-top:30px;
       opacity:0;
     }
     .textoBase4{
-      text-align:center;
-      width:85%;
+      text-align:justify; 
+      width:50%; @media(max-width: 1045px){width:90%};
       padding:15px;
       display:flex;
       margin-left:-350px;

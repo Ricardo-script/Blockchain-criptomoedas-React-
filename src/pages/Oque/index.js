@@ -24,13 +24,13 @@ function Oque(){
         if(document.documentElement.scrollTop > 1100){
             setfoto3('foto3');
         }
-        if (document.documentElement.scrollTop > 1300) {  
+        if (document.documentElement.scrollTop > 1428) {  
             setTexto3('texto3');
         }
-        if(document.documentElement.scrollTop > 1500){
+        if(document.documentElement.scrollTop > 1728){
             setfoto4('foto4');
         }
-        if (document.documentElement.scrollTop > 1600) {  
+        if (document.documentElement.scrollTop > 2028) {  
             setTexto4('texto4');
         }
         console.log(document.documentElement.scrollTop)
@@ -63,7 +63,7 @@ function Oque(){
 
             <AreaPost>
                 <Post>
-                    <span className="title-header">Oque é Bitcoin?</span>
+                    <span className="title-header">Como funciona o Bitcoin?</span>
                     <img src={tecladoimg} className="imgPost" style={{opacity:1}} alt="10" />
                     <span className="textoBase" id={texto}>
                         BitCoin é uma moeda digital que existe online e funciona

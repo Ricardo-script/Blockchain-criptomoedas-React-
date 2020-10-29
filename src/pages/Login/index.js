@@ -50,11 +50,8 @@ export default class Login extends Component {
                 <Button type="button" color="secondary" className="btnCreate">
                     <Link to="/cadastro" className="link">Criar uma conta</Link>
                 </Button>
-                
-                <p className="forgot-password text-right">
-                    Esqueceu a <a href="/">Senha?</a>
-                </p>
             </Form>
         );
     }
 }
+

@@ -146,7 +146,6 @@ class Cadastro extends Component{
         }
 
         const data = JSON.stringify(this.state);
-        console.log(data);
         let url = 'https://clients-control-api.herokuapp.com/clients-control-api/client'
 
         const response =  await fetch(url,{
@@ -250,7 +249,8 @@ class Cadastro extends Component{
                         <Form.Group controlId="formGridAddress1">
                             <Form.Label>Email:</Form.Label>
                             <Form.Control 
-                                placeholder="E-mail" 
+                                placeholder="E-mail"
+                                maxLength={35} 
                                 className="emailInput"
                                 type="email"
                                 onChange={(e) => this.setState({email: e.target.value})}
