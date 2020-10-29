@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Quem from './pages/Quem';
 import Oque from './pages/Oque';
 import history from './History';
+import Dashboard from './pages/Dashboard';
 
 
 const Routes = () =>(
@@ -18,6 +19,7 @@ const Routes = () =>(
             <Route exact path="/cadastro" component={Cadastro}/>
             <Route exact path ="/quem" component={Quem}/>
             <Route exact path ="/oque" component={Oque}/>
+            <Route exact path ="/dashboard" component={Dashboard}/>
         </Switch>
     </Router>
 );
