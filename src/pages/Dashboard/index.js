@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Dash, Legend, Header, Grafico } from './styles';
+import { Container, Dash, AreaLegend, Legend, Header, Grafico } from './styles';
 import logobit from '../../assets/bitgreen.png';
 import {Doughnut} from 'react-chartjs-2';
 
@@ -43,23 +43,21 @@ export default class Dashboard extends Component{
 
     const database = {
         labels: [
-          'Maior Preço Unitário',
-          'Maior Preço de Compra',
-      ],
-      datasets: [{
-        data: [keyData.high, keyData.buy],
-        backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        
+            'Maior Preço Unitário',
+            'Maior Preço de Compra',
         ],
-        hoverBackgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        
-        ]
-      }]
-      };
+        datasets: [{
+            data: [keyData.high, keyData.buy],
+            backgroundColor: [
+                '#FF6384',
+                '#36A2EB',
+            ],
+            hoverBackgroundColor: [
+                '#FF6384',
+                '#36A2EB',
+            ]
+        }]
+    };
      
         return(
             <Container>
@@ -67,16 +65,17 @@ export default class Dashboard extends Component{
                         <Header><img src={logobit} alt="10" width={'7%'}/>
                             Resumo das últimas 24 horas de negociações
                         </Header>
-                        <Legend>Maior preço unitário:{keyData.high}</Legend>
-                        <Legend>Menor preço unitário:{keyData.low}</Legend>
-                        <Legend>Quantidade negociada:{keyData.vol}</Legend>
-                        <Legend>Preço unitário da última:{keyData.last}</Legend>
-                        <Legend>Maior preço de oferta de compra:{keyData.buy}</Legend>
-                        <Legend>Menor preço de oferta de venda:{keyData.sell}</Legend>
-                        <Legend>Data e hora da informação:{keyData.date}</Legend>
+                        <AreaLegend>
+                            <Legend>Maior preço unitário:{keyData.high}</Legend>
+                            <Legend>Menor preço unitário:{keyData.low}</Legend>
+                            <Legend>Quantidade negociada:{keyData.vol}</Legend>
+                            <Legend>Preço unitário da última:{keyData.last}</Legend>
+                            <Legend>Maior preço de oferta de compra:{keyData.buy}</Legend>
+                            <Legend>Menor preço de oferta de venda:{keyData.sell}</Legend>
+                            <Legend>Data e hora da informação:{keyData.date}</Legend>
+                        </AreaLegend>
 
                         <Grafico>
-    
                             <Doughnut
                                 data={database}
                             />

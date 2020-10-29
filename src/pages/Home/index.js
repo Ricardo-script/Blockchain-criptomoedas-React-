@@ -1,11 +1,13 @@
 import React from 'react';
 import Background from './Images/menu_fundo.png';
-import { Capa } from './styled';
+import { Capa, Container } from './styled';
 
 const Home = () =>(
-    <div>
-        <Capa src={Background} alt="" />
-    </div>
+    <Container>
+        <div>
+            <Capa src={Background} alt="100" />
+        </div>
+    </Container>
     
 );
 
