@@ -42,13 +42,13 @@ export const Form = styled.form`
         color: #FFF;
     }
 
-    @media(max-width: 470px){
+    @media(max-width: 600px){
         border: 1px solid #FFF;
         border-radius: 0;
         background: #FFF;
         width: 100%;
-        height: 100%;
-        margin: 0;
+        height: 92vh;
+        margin: 0 auto;
 
         .btnSingIn{
             width: 230px;

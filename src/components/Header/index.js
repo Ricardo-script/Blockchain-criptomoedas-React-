@@ -38,11 +38,9 @@ class Header extends Component{
                             <Nav.Link href="/quem">Quem somos nós?</Nav.Link>
                             <Nav.Link href="oque">Oque é?</Nav.Link>
                             <NavDropdown title="Gráficos" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Gráfico 1</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Gráfico 2</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Gráfico 3</NavDropdown.Item>
+                                <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Gráfico separado</NavDropdown.Item>
+                                <NavDropdown.Item href="/dashboard">Gráfico Anual</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/cadastro">Criar conta</Nav.Link>
                         </Nav>
