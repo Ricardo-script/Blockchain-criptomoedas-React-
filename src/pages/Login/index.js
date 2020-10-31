@@ -20,14 +20,16 @@ export default class Login extends Component {
             const response = await api.post("/auth",this.state);
             localStorage.setItem('token_autenticacao',response.data.token);
             console.log(response.data);
-            //this.props.history.push("/");
-            this.props.history.replace("/");
+            //this.props.history.replace("/dashboard");
+            this.props.history.push('/dashboard'); 
+            document.location.reload();
            
         } catch (error) {
             alert('Falha ao autenticar usuário');
         }
         
     }
+
     render() {
         return (
             <Form>

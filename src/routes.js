@@ -8,6 +8,7 @@ import Quem from './pages/Quem';
 import Oque from './pages/Oque';
 import history from './History';
 import Dashboard from './pages/Dashboard';
+import Topcoin from './pages/Topcoin';
 
 
 const Routes = () =>(
@@ -20,6 +21,7 @@ const Routes = () =>(
             <Route exact path ="/quem" component={Quem}/>
             <Route exact path ="/oque" component={Oque}/>
             <Route exact path ="/dashboard" component={Dashboard}/>
+            <Route exact path ="/topcoin" component={Topcoin}/>
         </Switch>
     </Router>
 );

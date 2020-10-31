@@ -40,7 +40,7 @@ class Header extends Component{
                             <NavDropdown title="Gráficos" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/dashboard">Gráfico Anual</NavDropdown.Item>
+                                <NavDropdown.Item href="/topcoin">Ranking Top moedas</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/cadastro">Criar conta</Nav.Link>
                         </Nav>
