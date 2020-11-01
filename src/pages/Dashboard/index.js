@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, DashGeral, Dash, AreaLegend, Legend, Header, Grafico, AreaGrafico } from './styles';
+import { Container, DashGeral, Dash, AreaLegend, Legend,HeaderGeral,Header, Grafico, AreaGrafico } from './styles';
 import logobit from '../../assets/bitgreen.png';
 import {Doughnut} from 'react-chartjs-2';
 import {Bar} from 'react-chartjs-2';
@@ -116,9 +116,9 @@ export default class Dashboard extends Component{
             <Container>
                 
                     <DashGeral>
-                        <Header style={{height:'7%'}}><img src={logobit} alt="10" width={'3.5%'}/>
+                        <HeaderGeral><img src={logobit} alt="10"/>
                             Resumo das últimas 24 horas de negociações
-                        </Header>
+                        </HeaderGeral>
 
                         <AreaLegend>
                             <Legend>Data e hora da informação:{keyData.date}</Legend>

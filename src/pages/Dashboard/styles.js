@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+//import { Container, DashGeral, Dash, AreaLegend, Legend, Header, Grafico, AreaGrafico } from './styles';
+
 export const Container = styled.div`
 `;
 
@@ -32,7 +34,7 @@ export const DashGeral = styled.div`
         }
         @media(max-width: 1000px){
             width:90vw;
-            height:55vh;
+            height:70vh;
             margin: 2% auto;
             .graficoStyled{
                 /*width:94%;
@@ -52,28 +54,59 @@ export const AreaLegend = styled.div`
     }
 `;
 
+export const HeaderGeral = styled.div`
+    background-color:orange;
+    font-weight:bold;
+    color:#1C1C1C;
+    height:10%;
+        display:flex;
+        flex-direction:row-gap;
+        justify-content:left;
+        align-items:center;
+
+    img{
+        width:4%;
+        margin:0 7% 0 1%;
+    }
+    
+    @media(max-width: 500px){
+        font-size: 14px;
+        height:10%;
+        
+        img{
+            margin:0 4% 0 1%;
+            width:8%;
+        }
+    }
+`;
+
+
 export const Header = styled.div`
     background-color:orange;
-    padding:4px;
+    height: 6vh;
     text-align:left;
     font-weight:bold;
     color:#1C1C1C;
-        @media(max-width: 1390px){
-            font-size:14px;
-        }
-
+        display:flex;
+        flex-direction:row-gap;
+        justify-content:left;
+        align-items:center;
+        
     img{
-        margin-left: -18%;
-        margin-right: 5%;
-        margin-left: 1vw;
-        margin-right: 1vw;
+       
+        margin: 0 5% 0 2%; 
+    }
+    @media(max-width: 500px){
+        justify-content:left;
+        img{
+          margin: 0 5% 0 2%; 
+        }
+        
     }
 
-        @media(max-width: 1200){
-            img{
-            margin-left: -15%;
-            margin-right: 2%;
-        }
+    @media(max-width: 1000){
+        height:7vh;
+        border:1px solid red;
     }
 `;
 
@@ -90,13 +123,17 @@ export const Dash = styled.div`
            margin: 3% auto;
         }
 
-        @media(max-width: 500px){
-           width:92vw;
+        @media(max-width: 470px){
+           width:97vw;
+           height:55vh;
            margin: 3% auto;
 
         }
         .graficoStyled{
            
+           @media(max-width:500px){
+               width:100%;
+            }
         }
 `;
 
@@ -107,8 +144,9 @@ export const Legend = styled.span`
 `;
 
 export const Grafico = styled.div`   
-    @media(max-width: 1015px){
-        
-    }    
+    @media(max-width: 1000px){
+       width:70vw;
+       margin: 0 auto;
+    }   
 `;
 
