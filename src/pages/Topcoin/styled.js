@@ -4,6 +4,14 @@ export const Container = styled.div`
     background-color: #FFF;
 `;
 
+export const DataInfo = styled.div`
+    display:flex;
+    flex-direction:row;
+    @media(max-width:900px){
+        flex-direction:column;
+    }
+`;
+
 export const Header = styled.div`
     background-color:#FE9A2E;
     padding:20px;
@@ -19,7 +27,7 @@ export const Header = styled.div`
 export const AreaMoeda = styled.div`
     border: 1px solid #D8D8D8;
     width:30%;
-    margin: 2% 0 0 15%;
+    margin: 2% 0 0 5%;
     padding: 5px;
     box-shadow: -5px 5px 0px -2px #A4A4A4;
 
@@ -59,3 +67,12 @@ export const Data = styled.span`
 
 `;
 
+export const Grafico = styled.div`
+    width:50%;
+    height:50vh;
+    margin: 5% 0 0 5%;
+    @media(max-width:900px){
+        width: 95vw;
+        margin: 5% 0 0 1%;
+    }
+`;

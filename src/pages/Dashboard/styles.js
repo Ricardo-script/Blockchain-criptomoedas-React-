@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
 `;
 
 export const AreaGrafico = styled.div`
@@ -10,7 +9,7 @@ export const AreaGrafico = styled.div`
     margin: 0 auto;
     display:grid;
     grid-template-columns: repeat(2, minmax(250px, 1fr));
-    grid-gap:20px;
+    grid-gap:20px;  
 
         @media(max-width: 1000px){
             width:100%;
@@ -21,26 +20,36 @@ export const AreaGrafico = styled.div`
 export const DashGeral = styled.div`
     background:#FFF;
     width:70vw;
-    height:80vh;
+    height:70vh;
     min-width:350px;
     margin: 2% auto;
     box-shadow: 8px 8px 0px -3px rgba(17,255,98,0.51);
     
         .graficoStyled{
-                width:90%;
-                height:40%;
-            }
-
+            width:90%;
+            height:50%;
+            margin: 2% auto;
+        }
         @media(max-width: 1000px){
             width:90vw;
-            height:70vh;
+            height:55vh;
             margin: 2% auto;
             .graficoStyled{
-                width:94%;
-                height:47%;
+                /*width:94%;
+                height:47%;*/
+                margin: 7% auto;
             }
-        }
-        
+        }            
+`;
+
+export const AreaLegend = styled.div`
+    display: flex;
+    flex-direction:column;
+    margin: 1% 0 0 2%;
+    @media(max-width: 1220px){
+        font-size:12px;
+        transition:1s;
+    }
 `;
 
 export const Header = styled.div`
@@ -54,8 +63,8 @@ export const Header = styled.div`
         }
 
     img{
-       /* margin-left: -18%;
-        margin-right: 5%;*/
+        margin-left: -18%;
+        margin-right: 5%;
         margin-left: 1vw;
         margin-right: 1vw;
     }
@@ -71,41 +80,35 @@ export const Header = styled.div`
 
 export const Dash = styled.div`
     background:#FFF;
-    width:30vw;
-    min-width:350px;
-    height:100%;
-    margin: 2% 0 0 2%;
+    width:34vw;
+    margin-bottom: 5%;
     box-shadow: 8px 8px 0px -3px rgba(17,255,98,0.51);
 
+
         @media(max-width: 1000px){
-            width:90vw;
+           width:90vw;
+           margin: 3% auto;
+        }
+
+        @media(max-width: 500px){
+           width:92vw;
+           margin: 3% auto;
+
         }
         .graficoStyled{
-            width:100%;
-            height:50%;
+           
         }
 `;
 
-export const AreaLegend = styled.div`
-   display: flex;
-   flex-direction:column;
-   @media(max-width: 1220px){
-            font-size:12px;
-            transition:1s;
-        }
-`;
+
 
 export const Legend = styled.span`
-    padding:3px;
-    margin-left:5px;
+
 `;
 
 export const Grafico = styled.div`   
-    width: 90%;
-    align-items:center;
-    justify-content:center;
-    margin: 0 auto;
-        @media(max-width: 1015px){
-            width: 350px;
-        }
+    @media(max-width: 1015px){
+        
+    }    
 `;
+
