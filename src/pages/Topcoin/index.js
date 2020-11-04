@@ -72,6 +72,31 @@ export default class Topcoin extends Component{
         const ETH = this.state.data.ETH
         const XRP = this.state.data.XRP
 
+        //=================converter moeda==============================================
+        
+
+        //==============================================================================
+
+        //=================converter data==============================================
+        const BTC_data = new Date(BTC.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const USD_data = new Date(USD.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const USDT_data = new Date(USDT.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const CAD_data = new Date(CAD.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const EUR_data = new Date(EUR.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const GBP_data = new Date(GBP.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const ARS_data = new Date(ARS.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const LTC_data = new Date(LTC.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const JPY_data = new Date(JPY.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const CHF_data = new Date(CHF.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const AUD_data = new Date(AUD.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const CNY_data = new Date(CNY.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const ILS_data = new Date(ILS.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const ETH_data = new Date(ETH.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        const XRP_data = new Date(XRP.create_date).toLocaleString('pt-BR', {timeZone: 'UTC'});
+        
+        //=============================================================================
+
+
         const databars = {
             labels: ['BTC', 'USD', 'USDT', 'CAD', 'EUR', 'GBP',
                      'ARS', 'LTC', 'JPY', 'CHF', 'AUD', 'CNY',
@@ -121,14 +146,9 @@ export default class Topcoin extends Component{
                     'rgba(255, 159, 64, 1)',
                 ],
                 borderWidth: 1
-
             }]
-
-            
-           
         }
-       
-       
+         
         return(
             <Container>
                 <Header>Top 15 Moedas</Header>
@@ -140,7 +160,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{BTC.name} <strong>{BTC.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{BTC.high}</Valor>
                                     <Valor>Menor preço unitário:{BTC.low}</Valor>
-                                    <Data>Última atualização:{BTC.create_date}</Data>
+                                    <Data>Última atualização:{BTC_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -151,7 +171,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{ETH.name} <strong>{ETH.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{ETH.high}</Valor>
                                     <Valor>Menor preço unitário:{ETH.low}</Valor>
-                                    <Data>Última atualização:{ETH.create_date}</Data>
+                                    <Data>Última atualização:{ETH_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -162,7 +182,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{XRP.name} <strong>{XRP.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{XRP.high}</Valor>
                                     <Valor>Menor preço unitário:{XRP.low}</Valor>
-                                    <Data>Última atualização:{XRP.create_date}</Data>
+                                    <Data>Última atualização:{XRP_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -173,7 +193,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{LTC.name} <strong>{LTC.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{LTC.high}</Valor>
                                     <Valor>Menor preço unitário:{LTC.low}</Valor>
-                                    <Data>Última atualização:{LTC.create_date}</Data>
+                                    <Data>Última atualização:{LTC_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -184,7 +204,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{USD.name} <strong>{USD.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{USD.high}</Valor>
                                     <Valor>Menor preço unitário:{USD.low}</Valor>
-                                    <Data>Última atualização:{USD.create_date}</Data>
+                                    <Data>Última atualização:{USD_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -195,7 +215,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{USDT.name} <strong>{USDT.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{USDT.high}</Valor>
                                     <Valor>Menor preço unitário:{USDT.low}</Valor>
-                                    <Data>Última atualização:{USDT.create_date}</Data>
+                                    <Data>Última atualização:{USDT_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -206,7 +226,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{CAD.name} <strong>{CAD.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{CAD.high}</Valor>
                                     <Valor>Menor preço unitário:{CAD.low}</Valor>
-                                    <Data>Última atualização:{CAD.create_date}</Data>
+                                    <Data>Última atualização:{CAD_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -217,7 +237,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{EUR.name} <strong>{EUR.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{EUR.high}</Valor>
                                     <Valor>Menor preço unitário:{EUR.low}</Valor>
-                                    <Data>Última atualização:{EUR.create_date}</Data>
+                                    <Data>Última atualização:{EUR_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -228,7 +248,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{GBP.name} <strong>{GBP.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{GBP.high}</Valor>
                                     <Valor>Menor preço unitário:{GBP.low}</Valor>
-                                    <Data>Última atualização:{GBP.create_date}</Data>
+                                    <Data>Última atualização:{GBP_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -239,7 +259,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{ARS.name} <strong>{ARS.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{ARS.high}</Valor>
                                     <Valor>Menor preço unitário:{ARS.low}</Valor>
-                                    <Data>Última atualização:{ARS.create_date}</Data>
+                                    <Data>Última atualização:{ARS_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -250,7 +270,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{JPY.name} <strong>{JPY.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{JPY.high}</Valor>
                                     <Valor>Menor preço unitário:{JPY.low}</Valor>
-                                    <Data>Última atualização:{JPY.create_date}</Data>
+                                    <Data>Última atualização:{JPY_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -261,7 +281,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{CHF.name} <strong>{CHF.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{CHF.high}</Valor>
                                     <Valor>Menor preço unitário:{CHF.low}</Valor>
-                                    <Data>Última atualização:{CHF.create_date}</Data>
+                                    <Data>Última atualização:{CHF_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -272,7 +292,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{AUD.name} <strong>{AUD.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{AUD.high}</Valor>
                                     <Valor>Menor preço unitário:{AUD.low}</Valor>
-                                    <Data>Última atualização:{AUD.create_date}</Data>
+                                    <Data>Última atualização:{AUD_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -283,7 +303,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{CNY.name} <strong>{CNY.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{CNY.high}</Valor>
                                     <Valor>Menor preço unitário:{CNY.low}</Valor>
-                                    <Data>Última atualização:{CNY.create_date}</Data>
+                                    <Data>Última atualização:{CNY_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -294,7 +314,7 @@ export default class Topcoin extends Component{
                                     <Titulo>Nome:{ILS.name} <strong>{ILS.code}</strong></Titulo>
                                     <Valor>Maior preço unitário:{ILS.high}</Valor>
                                     <Valor>Menor preço unitário:{ILS.low}</Valor>
-                                    <Data>Última atualização:{ILS.create_date}</Data>
+                                    <Data>Última atualização:{ILS_data}</Data>
                                 </Moeda>
                             <br/>
                         </AreaInfo>  

@@ -41,6 +41,25 @@ export default class Dashboard extends Component{
    render(){
 
     const keyData = this.state.data.ticker;
+
+    //==========================converter dados da Api: data ======================================
+    const unix_timestamp = keyData.date;
+    const dataAtual = new Date(unix_timestamp * 1000);
+    const year = dataAtual.getFullYear();
+    const month = dataAtual.getMonth();
+    const day = dataAtual.getDay();
+    const hours = dataAtual.getHours();
+    const minutes = "0" + dataAtual.getMinutes();
+    const seconds = "0" + dataAtual.getSeconds();
+    const dataFormatada = ' ' + (day <= 9 ? '0' + day: day) + '/' + month + '/' +  year + ' ' + hours +
+    ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+    //converter moeda:
+    //const moedaFormatada = keyData.low.toLocaleString('pt-BR', { style:'currency:', currency: 'BRL'});
+    //console.log('moeda é : ' + moedaFormatada/1000);
+
+    //==============================================================================================
+
     //===================================Area Gráficos=====================================
     
     const databars = {
@@ -121,7 +140,7 @@ export default class Dashboard extends Component{
                         </HeaderGeral>
 
                         <AreaLegend>
-                            <Legend>Data e hora da informação:{keyData.date}</Legend>
+                            <Legend>Data e hora da informação:{dataFormatada}</Legend>
                             <Legend>Maior preço unitário:{keyData.high}</Legend>
                             <Legend>Menor preço unitário:{keyData.low}</Legend>
                             <Legend>Quantidade negociada:{keyData.vol}</Legend>
@@ -148,7 +167,7 @@ export default class Dashboard extends Component{
                             <Legend>Maior preço unitário:{keyData.high}</Legend>
                             <Legend>Menor preço unitário:{keyData.low}</Legend>
                             <Legend>Preço unitário da última:{keyData.last}</Legend>
-                            <Legend>Data e hora da informação:{keyData.date}</Legend>
+                            <Legend>Data e hora da informação:{dataFormatada}</Legend>
                         </AreaLegend>
 
                         <Grafico className="graficoStyled">
@@ -166,7 +185,7 @@ export default class Dashboard extends Component{
                         <AreaLegend>
                             <Legend>Maior preço de oferta de compra:{keyData.buy}</Legend>
                             <Legend>Menor preço de oferta de venda:{keyData.sell}</Legend>
-                            <Legend>Data e hora da informação:{keyData.date}</Legend>
+                            <Legend>Data e hora da informação:{dataFormatada}</Legend>
                         </AreaLegend>
                         <Grafico className="graficoStyled">
                             <Doughnut

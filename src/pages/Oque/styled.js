@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    background-color: #FE9A2E;
-    
+    background-color: #FE9A2E;    
 `;
 
 export const AreaTitulo = styled.span`
@@ -28,7 +27,7 @@ export const AreaTitulo = styled.span`
 export const AreaPost = styled.div`
     position: absolute;
     background-color:#FFF;
-    
+
         .imgPost{
             opacity:0;
             width:50%;
@@ -51,7 +50,7 @@ export const Post = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     .textoBase{
       text-align:justify;
       width:50%; @media(max-width: 1045px){width:90%};
@@ -65,7 +64,7 @@ export const Post = styled.div`
       width:50%; @media(max-width: 1045px){width:90%};
       padding:15px;
       display:flex;
-      margin-right:-350px;
+      margin-left:-350px;
       opacity:0;
     }
     .textoBase3{
@@ -114,7 +113,7 @@ export const Post = styled.div`
         transition:2s;  
     }
     #texto2{
-        margin-right:0;
+        margin-left:0;
         opacity:1;
         transition:2s;
     }
