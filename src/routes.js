@@ -9,6 +9,7 @@ import Oque from './pages/Oque';
 import history from './History';
 import Dashboard from './pages/Dashboard';
 import Topcoin from './pages/Topcoin';
+import Cotacoes from './pages/Cotacoes';
 
 
 const Routes = () =>(
@@ -22,6 +23,7 @@ const Routes = () =>(
             <Route exact path ="/oque" component={Oque}/>
             <Route exact path ="/dashboard" component={Dashboard}/>
             <Route exact path ="/topcoin" component={Topcoin}/>
+            <Route exact path ="/cotacoes" component={Cotacoes}/>
         </Switch>
     </Router>
 );

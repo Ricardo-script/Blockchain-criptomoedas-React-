@@ -5,6 +5,9 @@ import Nav from 'react-bootstrap/Nav';
 import Logo from './logo-Bit.png';
 import { Link } from 'react-router-dom';
 import history from '../../History';
+import { HiChartPie } from "react-icons/hi";
+import { FaBitcoin } from "react-icons/fa";
+import { GiPlanetCore } from "react-icons/gi";
 
 
 class Header extends Component{
@@ -38,9 +41,10 @@ class Header extends Component{
                             <Nav.Link href="/quem">Quem somos nós?</Nav.Link>
                             <Nav.Link href="oque">Oque é?</Nav.Link>
                             <NavDropdown title="Gráficos" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
+                                <NavDropdown.Item href="/dashboard"><HiChartPie/> Dashboard</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/topcoin">Ranking Top moedas</NavDropdown.Item>
+                                <NavDropdown.Item href="/topcoin"><FaBitcoin/> Ranking Top moedas</NavDropdown.Item>
+                                <NavDropdown.Item href="/cotacoes"><GiPlanetCore/> Cotações</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/cadastro">Criar conta</Nav.Link>
                         </Nav>

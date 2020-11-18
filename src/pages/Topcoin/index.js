@@ -15,6 +15,7 @@ import logoLene from '../../assets/logoLene.png';
 import logoFranco from '../../assets/logoFranco.png';
 import logoYuan from '../../assets/logoYuan.png';
 import logoShekel from '../../assets/logoShekel.png';
+import { BiMedal } from "react-icons/bi";
 
 
 export default class Topcoin extends Component{
@@ -151,7 +152,7 @@ export default class Topcoin extends Component{
          
         return(
             <Container>
-                <Header>Top 15 Moedas</Header>
+                <Header><BiMedal/>Top 15 Moedas</Header>
                 <DataInfo>
                     <AreaMoeda>
                         <AreaInfo>

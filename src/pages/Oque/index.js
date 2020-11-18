@@ -4,6 +4,7 @@ import tecladoimg from '../../assets/tecladobit.jpg';
 import tempoimg from '../../assets/tempo.jpg';
 import comprarimg from '../../assets/comprar.jpg';
 import segurancaimg from '../../assets/seguranca.jpg';
+import { FaBitcoin } from "react-icons/fa";
 
 function Oque(){
 
@@ -52,7 +53,7 @@ function Oque(){
     return(
         <Container>
             <AreaTitulo>
-                <span className="titulo">Oque é Bitcoin?</span>
+                <span className="titulo">Oque é Bitcoin?<FaBitcoin/></span>
                 <span className="descricao">
                     Neste Tutorial iremos explicar
                     como funciona a tecnologia Bitcoin,
