@@ -10,6 +10,12 @@ export const AreaCapa = styled.div`
    
 `;
 
+export const Asset = styled.img`
+    width:70%;
+    height:70%;
+    margin: 0 auto;
+`;
+
 export const Capa = styled.img`
     width: 100%;
     height: 100%;

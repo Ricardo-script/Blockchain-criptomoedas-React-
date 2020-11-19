@@ -4,7 +4,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
 import Logo from './logo-Bit.png';
 import { Link } from 'react-router-dom';
-import history from '../../History';
 import { HiChartPie } from "react-icons/hi";
 import { FaBitcoin } from "react-icons/fa";
 import { GiPlanetCore } from "react-icons/gi";
@@ -15,19 +14,10 @@ class Header extends Component{
         super(props);
         this.state ={}
 
-        this.login = this.login.bind(this);
-        this.logout = this.logout.bind(this);
+        //this.login = this.login.bind(this);
+        //this.logout = this.logout.bind(this);
     }
 
-    login(){
-        history.replace('/login');        
-    }
-
-    logout(){
-        localStorage.removeItem('token_autenticacao');
-        history.replace('/login');
-        console.log(this.props.history);        
-    }
 
     render(){
         return(
@@ -47,18 +37,6 @@ class Header extends Component{
                                 <NavDropdown.Item href="/cotacoes"><GiPlanetCore/> Cotações</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link href="/cadastro">Criar conta</Nav.Link>
-                        </Nav>
-
-                        <Nav>
-                        <Nav.Link
-                            href="/login"
-                            onClick={localStorage.getItem('token_autenticacao') === null ? 
-                            this.login : 
-                            this.logout
-                            }>
-                            {localStorage.getItem('token_autenticacao') === null ? 'Entrar' : 'Sair'}
-                            
-                        </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>      
