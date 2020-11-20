@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Background from './Images/menu_fundo.png';
 import { Capa, Container, AreaCapa, Asset } from './styled';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
@@ -8,10 +8,26 @@ const Home = (props) => {
     const {
         className
     } = props;
-    const [modal, setModal] = useState(true);
+    
+    //const [modal, setModal] = useState(true);
+    const [modal, setModal] = useState('');
     const toggle = () => setModal(!modal);
     const cadastro = () => window.location.href = "cadastro"; 
+
     
+
+    useEffect(() => {
+        const storageOn = sessionStorage.getItem('logon');
+        if(storageOn){
+            setModal(false);
+        }else{
+            setModal(true);
+        }
+    },[]);
+
+    useEffect(()=> {
+        sessionStorage.setItem('logon', JSON.stringify(1));
+    },[modal]);
  
     return(
          

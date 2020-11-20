@@ -107,7 +107,7 @@ export default class Cotacoes extends Component{
                                 <th>Última Compra</th>
                                 <th>Preço Máximo</th>
                                 <th>Preço Minimo</th>
-                                <th>Percentual</th>
+                                <th>Variação</th>
                                 <th>Atualização</th>
                             </tr>
                         </thead>
@@ -116,10 +116,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">1</th>
                                 <td><Logo src={logoBit}></Logo>{BTC.name}</td>
                                 <td>{BTC.code}</td>
-                                <td>{BTC.bid}</td>
-                                <td>{BTC.ask}</td>
-                                <td>{BTC.high}</td>
-                                <td>{BTC.low}</td>
+                                <td>R$ {parseFloat(BTC.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(BTC.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(BTC.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(BTC.low).toFixed(2).replace(".",",")}</td>
                                 <td>{BTC.pctChange + '%'}</td>
                                 <td>{BTC_data}</td>
                             </tr>
@@ -127,10 +127,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">2</th>
                                 <td><Logo src={logoEthereum}></Logo>{ETH.name}</td>
                                 <td>{ETH.code}</td>
-                                <td>{ETH.bid}</td>
-                                <td>{ETH.ask}</td>
-                                <td>{ETH.high}</td>
-                                <td>{ETH.low}</td>
+                                <td>R$ {parseFloat(ETH.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ETH.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ETH.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ETH.low).toFixed(2).replace(".",",")}</td>
                                 <td>{ETH.pctChange + '%'}</td>
                                 <td>{ETH_data}</td>
                             </tr>
@@ -138,10 +138,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">3</th>
                                 <td><Logo src={logoRipple}></Logo>{XRP.name}</td>
                                 <td>{XRP.code}</td>
-                                <td>{XRP.bid}</td>
-                                <td>{XRP.ask}</td>
-                                <td>{XRP.high}</td>
-                                <td>{XRP.low}</td>
+                                <td>R$ {parseFloat(XRP.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(XRP.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(XRP.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(XRP.low).toFixed(2).replace(".",",")}</td>
                                 <td>{XRP.pctChange + '%'}</td>
                                 <td>{XRP_data}</td>
                             </tr>
@@ -150,10 +150,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">4</th>
                                 <td><Logo src={logoLite}></Logo>{LTC.name}</td>
                                 <td>{LTC.code}</td>
-                                <td>{LTC.bid}</td>
-                                <td>{LTC.ask}</td>
-                                <td>{LTC.high}</td>
-                                <td>{LTC.low}</td>
+                                <td>R$ {parseFloat(LTC.bid).toFixed(2)}</td>
+                                <td>R$ {parseFloat(LTC.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(LTC.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(LTC.low).toFixed(2).replace(".",",")}</td>
                                 <td>{LTC.pctChange + '%'}</td>
                                 <td>{LTC_data}</td>
                             </tr>
@@ -161,10 +161,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">5</th>
                                 <td><Logo src={logoDolar}></Logo>{USD.name}</td>
                                 <td>{USD.code}</td>
-                                <td>{USD.bid}</td>
-                                <td>{USD.ask}</td>
-                                <td>{USD.high}</td>
-                                <td>{USD.low}</td>
+                                <td>R$ {parseFloat(USD.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(USD.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(USD.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(USD.low).toFixed(2).replace(".",",")}</td>
                                 <td>{USD.pctChange + '%'}</td>
                                 <td>{USD_data}</td>
                             </tr>
@@ -172,10 +172,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">6</th>
                                 <td><Logo src={logoDolar}></Logo>{USDT.name}</td>
                                 <td>{USDT.code}</td>
-                                <td>{USDT.bid}</td>
-                                <td>{USDT.ask}</td>
-                                <td>{USDT.high}</td>
-                                <td>{USDT.low}</td>
+                                <td>R$ {parseFloat(USDT.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(USDT.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(USDT.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(USDT.low).toFixed(2).replace(".",",")}</td>
                                 <td>{USDT.pctChange + '%'}</td>
                                 <td>{USDT_data}</td>
                             </tr>
@@ -183,10 +183,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">7</th>
                                 <td><Logo src={logoDolar}></Logo>{CAD.name}</td>
                                 <td>{CAD.code}</td>
-                                <td>{CAD.bid}</td>
-                                <td>{CAD.ask}</td>
-                                <td>{CAD.high}</td>
-                                <td>{CAD.low}</td>
+                                <td>R$ {parseFloat(CAD.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CAD.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CAD.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CAD.low).toFixed(2).replace(".",",")}</td>
                                 <td>{CAD.pctChange + '%'}</td>
                                 <td>{CAD_data}</td>
                             </tr>
@@ -194,10 +194,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">8</th>
                                 <td><Logo src={logoEuro}></Logo>{EUR.name}</td>
                                 <td>{EUR.code}</td>
-                                <td>{EUR.bid}</td>
-                                <td>{EUR.ask}</td>
-                                <td>{EUR.high}</td>
-                                <td>{EUR.low}</td>
+                                <td>R$ {parseFloat(EUR.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(EUR.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(EUR.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(EUR.low).toFixed(2).replace(".",",")}</td>
                                 <td>{EUR.pctChange + '%'}</td>
                                 <td>{EUR_data}</td>
                             </tr>
@@ -205,10 +205,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">9</th>
                                 <td><Logo src={logoLibra}></Logo>{GBP.name}</td>
                                 <td>{GBP.code}</td>
-                                <td>{GBP.bid}</td>
-                                <td>{GBP.ask}</td>
-                                <td>{GBP.high}</td>
-                                <td>{GBP.low}</td>
+                                <td>R$ {parseFloat(GBP.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(GBP.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(GBP.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(GBP.low).toFixed(2).replace(".",",")}</td>
                                 <td>{GBP.pctChange + '%'}</td>
                                 <td>{GBP_data}</td>
                             </tr>
@@ -216,10 +216,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">10</th>
                                 <td><Logo src={logoPeso}></Logo>{ARS.name}</td>
                                 <td>{ARS.code}</td>
-                                <td>{ARS.bid}</td>
-                                <td>{ARS.ask}</td>
-                                <td>{ARS.high}</td>
-                                <td>{ARS.low}</td>
+                                <td>R$ {parseFloat(ARS.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ARS.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ARS.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ARS.low).toFixed(2).replace(".",",")}</td>
                                 <td>{ARS.pctChange + '%'}</td>
                                 <td>{ARS_data}</td>
                             </tr>
@@ -227,10 +227,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">11</th>
                                 <td><Logo src={logoLene}></Logo>{JPY.name}</td>
                                 <td>{JPY.code}</td>
-                                <td>{JPY.bid}</td>
-                                <td>{JPY.ask}</td>
-                                <td>{JPY.high}</td>
-                                <td>{JPY.low}</td>
+                                <td>R$ {parseFloat(JPY.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(JPY.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(JPY.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(JPY.low).toFixed(2).replace(".",",")}</td>
                                 <td>{JPY.pctChange + '%'}</td>
                                 <td>{JPY_data}</td>
                             </tr>
@@ -238,10 +238,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">12</th>
                                 <td><Logo src={logoFranco}></Logo>{CHF.name}</td>
                                 <td>{CHF.code}</td>
-                                <td>{CHF.bid}</td>
-                                <td>{CHF.ask}</td>
-                                <td>{CHF.high}</td>
-                                <td>{CHF.low}</td>
+                                <td>R$ {parseFloat(CHF.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CHF.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CHF.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CHF.low).toFixed(2).replace(".",",")}</td>
                                 <td>{CHF.pctChange + '%'}</td>
                                 <td>{CHF_data}</td>
                             </tr>
@@ -249,10 +249,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">13</th>
                                 <td><Logo src={logoDolar}></Logo>{AUD.name}</td>
                                 <td>{AUD.code}</td>
-                                <td>{AUD.bid}</td>
-                                <td>{AUD.ask}</td>
-                                <td>{AUD.high}</td>
-                                <td>{AUD.low}</td>
+                                <td>R$ {parseFloat(AUD.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(AUD.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(AUD.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(AUD.low).toFixed(2).replace(".",",")}</td>
                                 <td>{AUD.pctChange + '%'}</td>
                                 <td>{AUD_data}</td>
                             </tr>
@@ -260,10 +260,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">14</th>
                                 <td><Logo src={logoYuan}></Logo>{CNY.name}</td>
                                 <td>{CNY.code}</td>
-                                <td>{CNY.bid}</td>
-                                <td>{CNY.ask}</td>
-                                <td>{CNY.high}</td>
-                                <td>{CNY.low}</td>
+                                <td>R$ {parseFloat(CNY.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CNY.ask).toFixed(2).replace(".",",")}</td>
+                                <td>v{parseFloat(CNY.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(CNY.low).toFixed(2).replace(".",",")}</td>
                                 <td>{CNY.pctChange + '%'}</td>
                                 <td>{CNY_data}</td>
                             </tr>
@@ -271,10 +271,10 @@ export default class Cotacoes extends Component{
                                 <th scope="row">15</th>
                                 <td><Logo src={logoShekel}></Logo>{ILS.name}</td>
                                 <td>{ILS.code}</td>
-                                <td>{ILS.bid}</td>
-                                <td>{ILS.ask}</td>
-                                <td>{ILS.high}</td>
-                                <td>{ILS.low}</td>
+                                <td>R$ {parseFloat(ILS.bid).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ILS.ask).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ILS.high).toFixed(2).replace(".",",")}</td>
+                                <td>R$ {parseFloat(ILS.low).toFixed(2).replace(".",",")}</td>
                                 <td>{ILS.pctChange + '%'}</td>
                                 <td>{ILS_data}</td>
                             </tr>

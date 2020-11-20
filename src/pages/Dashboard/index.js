@@ -141,12 +141,12 @@ export default class Dashboard extends Component{
 
                         <AreaLegend>
                             <Legend>Data e hora da informação:{dataFormatada}</Legend>
-                            <Legend>Maior preço unitário:{keyData.high}</Legend>
-                            <Legend>Menor preço unitário:{keyData.low}</Legend>
-                            <Legend>Quantidade negociada:{keyData.vol}</Legend>
-                            <Legend>Preço unitário da última:{keyData.last}</Legend>
-                            <Legend>Maior preço de oferta de compra:{keyData.buy}</Legend>
-                            <Legend>Menor preço de oferta de venda:{keyData.sell}</Legend>
+                            <Legend>Maior preço unitário: R$ {parseFloat(keyData.high).toFixed(2)}</Legend>
+                            <Legend>Menor preço unitário: R$ {parseFloat(keyData.low).toFixed(2)}</Legend>
+                            <Legend>Quantidade negociada: R$ {parseFloat(keyData.vol).toFixed(2)}</Legend>
+                            <Legend>Preço unitário da última: R$ {parseFloat(keyData.last).toFixed(2)}</Legend>
+                            <Legend>Maior preço de oferta de compra: R$ {parseFloat(keyData.buy).toFixed(2)}</Legend>
+                            <Legend>Menor preço de oferta de venda: R$ {parseFloat(keyData.sell).toFixed(2)}</Legend>
                         </AreaLegend>
                         <Grafico className="graficoStyled">
                             <Bar
@@ -164,9 +164,9 @@ export default class Dashboard extends Component{
                             Comparativo entre preço unitário
                         </Header>
                         <AreaLegend>
-                            <Legend>Maior preço unitário:{keyData.high}</Legend>
-                            <Legend>Menor preço unitário:{keyData.low}</Legend>
-                            <Legend>Preço unitário da última:{keyData.last}</Legend>
+                            <Legend>Maior preço unitário: R$ {parseFloat(keyData.high).toFixed(2)}</Legend>
+                            <Legend>Menor preço unitário: R$ {parseFloat(keyData.low).toFixed(2)}</Legend>
+                            <Legend>Preço unitário da última: R$ {parseFloat(keyData.last).toFixed(2)}</Legend>
                             <Legend>Data e hora da informação:{dataFormatada}</Legend>
                         </AreaLegend>
 
@@ -183,8 +183,8 @@ export default class Dashboard extends Component{
                             Resumo Comparativo de ofertas
                         </Header>
                         <AreaLegend>
-                            <Legend>Maior preço de oferta de compra:{keyData.buy}</Legend>
-                            <Legend>Menor preço de oferta de venda:{keyData.sell}</Legend>
+                            <Legend>Maior preço de oferta de compra: R$ {parseFloat(keyData.buy).toFixed(2)}</Legend>
+                            <Legend>Menor preço de oferta de venda: R$ {parseFloat(keyData.sell).toFixed(2)}</Legend>
                             <Legend>Data e hora da informação:{dataFormatada}</Legend>
                         </AreaLegend>
                         <Grafico className="graficoStyled">

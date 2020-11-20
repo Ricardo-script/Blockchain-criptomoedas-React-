@@ -159,9 +159,9 @@ export default class Topcoin extends Component{
                             <Logo src={logoBit}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{BTC.name} <strong>{BTC.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{BTC.high}</Valor>
-                                    <Valor>Menor preço unitário:{BTC.low}</Valor>
-                                    <Data>Última atualização:{BTC_data}</Data>
+                                    <Valor>Maior preço unitário: R$ {parseFloat(BTC.high).toFixed(2)}</Valor>
+                                    <Valor>Menor preço unitário: R$ {parseFloat(BTC.low).toFixed(2)}</Valor>
+                                    <Data>Última atualização: {BTC_data}</Data>
                                 </Moeda>
                             </AreaInfo>
                             <br/>
@@ -170,8 +170,8 @@ export default class Topcoin extends Component{
                                 <Logo src={logoEthereum}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{ETH.name} <strong>{ETH.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{ETH.high}</Valor>
-                                    <Valor>Menor preço unitário:{ETH.low}</Valor>
+                                    <Valor>Maior preço unitário:{parseFloat(ETH.high).toFixed(2)}</Valor>
+                                    <Valor>Menor preço unitário:{parseFloat(ETH.low).toFixed(2)}</Valor>
                                     <Data>Última atualização:{ETH_data}</Data>
                                 </Moeda>
                             </AreaInfo>
@@ -181,8 +181,8 @@ export default class Topcoin extends Component{
                                 <Logo src={logoRipple}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{XRP.name} <strong>{XRP.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{XRP.high}</Valor>
-                                    <Valor>Menor preço unitário:{XRP.low}</Valor>
+                                    <Valor>Maior preço unitário:{parseFloat(XRP.high).toFixed(2)}</Valor>
+                                    <Valor>Menor preço unitário:{parseFloat(XRP.low).toFixed(2)}</Valor>
                                     <Data>Última atualização:{XRP_data}</Data>
                                 </Moeda>
                             </AreaInfo>
@@ -192,8 +192,8 @@ export default class Topcoin extends Component{
                                 <Logo src={logoLite}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{LTC.name} <strong>{LTC.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{LTC.high}</Valor>
-                                    <Valor>Menor preço unitário:{LTC.low}</Valor>
+                                    <Valor>Maior preço unitário:{parseFloat(LTC.high).toFixed(2)}</Valor>
+                                    <Valor>Menor preço unitário:{parseFloat(LTC.low).toFixed(2)}</Valor>
                                     <Data>Última atualização:{LTC_data}</Data>
                                 </Moeda>
                             </AreaInfo>
@@ -203,8 +203,8 @@ export default class Topcoin extends Component{
                                 <Logo src={logoDolar}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{USD.name} <strong>{USD.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{USD.high}</Valor>
-                                    <Valor>Menor preço unitário:{USD.low}</Valor>
+                                    <Valor>Maior preço unitário:{parseFloat(USD.high).toFixed(2)}</Valor>
+                                    <Valor>Menor preço unitário:{parseFloat(USD.low).toFixed(2)}</Valor>
                                     <Data>Última atualização:{USD_data}</Data>
                                 </Moeda>
                             </AreaInfo>
@@ -214,8 +214,8 @@ export default class Topcoin extends Component{
                                 <Logo src={logoDolar}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{USDT.name} <strong>{USDT.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{USDT.high}</Valor>
-                                    <Valor>Menor preço unitário:{USDT.low}</Valor>
+                                    <Valor>Maior preço unitário:{parseFloat(USDT.high).toFixed(2)}</Valor>
+                                    <Valor>Menor preço unitário:{parseFloat(USDT.low).toFixed(2)}</Valor>
                                     <Data>Última atualização:{USDT_data}</Data>
                                 </Moeda>
                             </AreaInfo>
@@ -225,8 +225,8 @@ export default class Topcoin extends Component{
                                 <Logo src={logoDolar}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{CAD.name} <strong>{CAD.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{CAD.high}</Valor>
-                                    <Valor>Menor preço unitário:{CAD.low}</Valor>
+                                    <Valor>Maior preço unitário:{parseFloat(CAD.high).toFixed(2)}</Valor>
+                                    <Valor>Menor preço unitário:{parseFloat(CAD.low).toFixed(2)}</Valor>
                                     <Data>Última atualização:{CAD_data}</Data>
                                 </Moeda>
                             </AreaInfo>
@@ -280,7 +280,7 @@ export default class Topcoin extends Component{
                                 <Logo src={logoFranco}></Logo>
                                 <Moeda>
                                     <Titulo>Nome:{CHF.name} <strong>{CHF.code}</strong></Titulo>
-                                    <Valor>Maior preço unitário:{CHF.high}</Valor>
+                                    <Valor>Maior preço unitário:{parseFloat(CHF.high).toFixed(2)}</Valor>
                                     <Valor>Menor preço unitário:{CHF.low}</Valor>
                                     <Data>Última atualização:{CHF_data}</Data>
                                 </Moeda>

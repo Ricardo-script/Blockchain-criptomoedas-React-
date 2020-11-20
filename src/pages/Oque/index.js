@@ -99,9 +99,9 @@ function Oque(){
                     <img src={comprarimg} className="imgPost" id={foto3} alt="10" />
                     <span className="textoBase3" id={texto3}>
                         São três as maneiras de comprar e vender:<br/>
-                        Mineirar - Factorybit Exchanges - P2P<br/>
+                        Mineirar - Exchanges - P2P<br/>
                         Para começar a negociar bitcoin e outras criptomoedas em uma exchange,
-                        como a FactoryBit o primeiro passo é se cadastrar na plataforma. 
+                        como a FactoryBit o primeiro passo é se cadastrar em alguma plataforma de criptomoedas. 
                         Se você desejar comprar criptomoedas, você terá que depositar dinheiro na
                         conta da corretora para que seja possível realizar uma ordem de compra para 
                         adquirir a criptomoeda escolhida.

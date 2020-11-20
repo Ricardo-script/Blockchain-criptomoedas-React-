@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Nav from 'react-bootstrap/Nav';
 import Logo from './logo-Bit.png';
@@ -7,6 +9,15 @@ import { Link } from 'react-router-dom';
 import { HiChartPie } from "react-icons/hi";
 import { FaBitcoin } from "react-icons/fa";
 import { GiPlanetCore } from "react-icons/gi";
+
+
+const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        faça seu cadastro e fique por dentro
+        de todas as atualizações de criptomoedas em tempo real, o cadastro é muito
+        simples, seguro, rapido e gratuito.
+    </Tooltip>
+  );
 
 
 class Header extends Component{
@@ -36,7 +47,15 @@ class Header extends Component{
                                 <NavDropdown.Item href="/topcoin"><FaBitcoin/> Ranking Top moedas</NavDropdown.Item>
                                 <NavDropdown.Item href="/cotacoes"><GiPlanetCore/> Cotações</NavDropdown.Item>
                             </NavDropdown>
+                            
+                            <OverlayTrigger
+                                placement="right"
+                                delay={{ show: 250, hide: 2000 }}
+                                overlay={renderTooltip}
+                            >
                             <Nav.Link href="/cadastro">Criar conta</Nav.Link>
+                            </OverlayTrigger>
+
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>      
