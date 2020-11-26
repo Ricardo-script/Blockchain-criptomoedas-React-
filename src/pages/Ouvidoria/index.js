@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { AreaForm, CapaImg } from  './style';
+import { AreaForm, CapaImg, Audio } from  './style';
 import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 import Modal from 'react-bootstrap/Modal'
 import imgOuvidoria from '../../assets/ouvidoria.jpg';
+import voz from '../../assets/voz.mp3';
+import mic from '../../assets/mic.png';
 
 
 class Ouvidoria extends Component{
@@ -10,8 +12,16 @@ class Ouvidoria extends Component{
     super(props);
     this.state = {
       show:true
-
     }
+
+    this.tocar = this.tocar.bind(this);
+  }
+
+  tocar(){
+   
+      const audio = document.querySelector('audio')
+      audio.play()
+    
   }
 
   render(){
@@ -28,6 +38,8 @@ class Ouvidoria extends Component{
                   <Modal.Title><span>Fale conosco - Atendimento Virtual</span></Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                <audio src={voz}></audio>
+                <label onClick={this.tocar}><Audio src={mic} alt="" /></label>
                   <p>
                     Olá! Eu sou a Assistente Virtual da FACTORYBIT.
                     Para iniciar o atendimento, por favor, 
@@ -64,7 +76,7 @@ class Ouvidoria extends Component{
                   Eu não sou um robô!
                 </Label>
               </FormGroup>
-              
+                     
               <Button>Enviar</Button>
           </Form>
         </Container>

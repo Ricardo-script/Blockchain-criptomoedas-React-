@@ -38,3 +38,6 @@ export const CapaImg = styled.img`
     width: 100%;
     margin: 0 auto;
 `;
+export const Audio = styled.img`
+    width:10%;
+`;

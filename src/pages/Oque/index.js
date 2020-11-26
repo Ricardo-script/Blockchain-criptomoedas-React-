@@ -84,7 +84,7 @@ function Oque(){
                         na conta bancária,as transações bitcoins são processadas
                         rapidamente<br/>
                         3. Sem Fronteiras - o bitcoin é uma ótima solução para lidar com 
-                        taxas de transação, taxas de câmbio ou moedas estrangeiras.
+                        taxas de transação, taxas de câmbio ou moedas estrangeiras.<br/>
                         4 Não Há disputas - Embora o bitcoin seja digital, funciona mais como 
                         dinheiro do que o próprio crédito. As transações Bitcoin são finais e 
                         não podem ser contestadas por um cliente com base na sua opinião (por exemplo, se 
