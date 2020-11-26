@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Background from './Images/menu_fundo.png';
-import { Capa, Container, AreaCapa, Asset } from './styled';
+import { Capa, Container, AreaCapa, Asset, Audio} from './styled';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Assistente from '../../assets/Assistente.png';
+import voz from '../../assets/apresentacao.mp3';
+import mic from '../../assets/mic.png';
 
 const Home = (props) => {
     const {
@@ -28,6 +30,20 @@ const Home = (props) => {
     useEffect(()=> {
         sessionStorage.setItem('logon', JSON.stringify(1));
     },[modal]);
+
+    
+        const tocar = () => document.querySelector('audio').play();
+
+
+        /*tocar(){
+   
+            const audio = document.querySelector('audio')
+            audio.play()
+          
+        }*/
+      
+    
+  
  
     return(
          
@@ -35,6 +51,8 @@ const Home = (props) => {
             <Modal isOpen={modal} toggle={toggle} className={className} >
             <ModalHeader toggle={toggle}>Seja muito bem vindo!</ModalHeader>
             <ModalBody>
+                <audio src={voz}></audio>
+                <label onClick={tocar}><Audio src={mic} alt="" /></label>
                 Olá! Somos a Factorybit, estamos muito felizes por receber você!<br/>
                 Somos uma empresa que oferece serviços baseados na tecnologia Blockchain
                 e estamos ansiosos por te-lo conosco, faça seu cadastro e fique por dentro

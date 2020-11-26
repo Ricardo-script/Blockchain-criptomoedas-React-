@@ -26,3 +26,7 @@ export const Capa = styled.img`
         height: 100%;        
     }
 `;
+
+export const Audio = styled.img`
+    width:10%;
+`;
