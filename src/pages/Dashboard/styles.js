@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-//import { Container, DashGeral, Dash, AreaLegend, Legend, Header, Grafico, AreaGrafico } from './styles';
-
 export const Container = styled.div`
 `;
 

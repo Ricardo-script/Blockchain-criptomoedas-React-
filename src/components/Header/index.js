@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { HiChartPie } from "react-icons/hi";
 import { FaBitcoin } from "react-icons/fa";
 import { GiPlanetCore } from "react-icons/gi";
+import { BiSupport } from "react-icons/bi";
 
 
 const renderTooltip = (props) => (
@@ -56,6 +57,10 @@ class Header extends Component{
                             <Nav.Link href="/cadastro">Criar conta</Nav.Link>
                             </OverlayTrigger>
 
+                        </Nav>
+                        <Nav>
+                        <Nav.Link href="/ouvidoria">Ouvidoria <BiSupport/></Nav.Link>
+                        
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>      

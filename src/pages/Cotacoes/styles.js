@@ -25,7 +25,8 @@ export const AreaCotacao = styled.div`
     background-color:#FFF;
 
     .grid{
-        width:90%;
+        @media(max-width:470px){width:750px}
+        width:90%; 
         border:1px solid #E6E6E6;
         margin: 0 auto;
 
@@ -51,8 +52,9 @@ export const Scroll = styled.div`
     overflow: scroll;
     }
     @media(max-width:470px){
-        overflow: scroll;
+        min-width: 99%;
         max-height:100%;
+        overflow: scroll;
     }
 `;
 
