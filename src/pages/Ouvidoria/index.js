@@ -11,18 +11,42 @@ class Ouvidoria extends Component{
   constructor(props){
     super(props);
     this.state = {
-      show:true
+      show:true,
+      email:'',
+      username:'',
+      message:''
     }
 
     this.tocar = this.tocar.bind(this);
+    this.btnEnviar = this.btnEnviar.bind(this);
+  }
+  
+  tocar(){
+    const audio = document.querySelector('audio');
+    audio.play(); 
   }
 
-  tocar(){
-   
-      const audio = document.querySelector('audio')
-      audio.play()
-    
-  }
+  async btnEnviar(){
+    const data = JSON.stringify(this.state);
+    let url = 'https://talk-to-us-factorybit.herokuapp.com/talk-to-us-factorybit/message'
+
+    const response =  await fetch(url,{
+      method:'POST',
+      headers:{
+        'content-type': 'application/json'
+      },
+      body: data
+    })
+
+    // verificação no servidor:
+    if(response.status === 400){
+      const respostaJson = await response.json();
+      alert(respostaJson.error.error_message);
+    } 
+    if(response.status === 201){
+        alert("foi");
+      }
+    }
 
   render(){
 
@@ -56,18 +80,35 @@ class Ouvidoria extends Component{
               </Modal>
               
             <FormGroup>
-              <Label for="examplePassword">Digite seu Nome</Label>
-              <Input type="password" name="name" id="name" placeholder="Digite seu Nome" />
+              <Label for="name">Digite seu Nome</Label>
+              <Input 
+                type="text" 
+                name="name" 
+                id="name" 
+                placeholder="Digite seu Nome"
+                onChange={(e) => this.setState({username:e.target.value})}
+              />
             </FormGroup>
 
             <FormGroup>
               <Label for="examplePassword">Digite seu E-mail</Label>
-              <Input type="email" name="email" id="email" placeholder="nome@email.com" />
+              <Input 
+                type="email" 
+                name="email" 
+                id="email" 
+                placeholder="nome@email.com"
+                onChange={(e) => this.setState({email: e.target.value})} 
+              />
             </FormGroup>
 
             <FormGroup>
               <Label for="exampleText" className="title">Mensagem</Label>
-              <Input type="textarea" name="text" id="text" />
+              <Input 
+                type="textarea" 
+                name="text" 
+                id="text"
+                onChange={(e) => this.setState({message: e.target.value})} 
+              />
             </FormGroup>
 
             <FormGroup check>
@@ -77,7 +118,9 @@ class Ouvidoria extends Component{
                 </Label>
               </FormGroup>
                      
-              <Button>Enviar</Button>
+              <Button variant="primary" className="btn-cad" type="button" onClick={this.btnEnviar}>
+                Enviar
+              </Button>
           </Form>
         </Container>
       </AreaForm>

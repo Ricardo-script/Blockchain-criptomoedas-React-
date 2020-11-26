@@ -32,19 +32,8 @@ const Home = (props) => {
     },[modal]);
 
     
-        const tocar = () => document.querySelector('audio').play();
+    const tocar = () => document.querySelector('audio').play();
 
-
-        /*tocar(){
-   
-            const audio = document.querySelector('audio')
-            audio.play()
-          
-        }*/
-      
-    
-  
- 
     return(
          
         <Container>
@@ -52,8 +41,8 @@ const Home = (props) => {
             <ModalHeader toggle={toggle}>Seja muito bem vindo!</ModalHeader>
             <ModalBody>
                 <audio src={voz}></audio>
-                <label onClick={tocar}><Audio src={mic} alt="" /></label>
-                Olá! Somos a Factorybit, estamos muito felizes por receber você!<br/>
+                <label onClick={tocar}><Audio src={mic} alt="" /></label><br/>
+                Olá! Somos a Factorybit, estamos muito felizes por receber você!
                 Somos uma empresa que oferece serviços baseados na tecnologia Blockchain
                 e estamos ansiosos por te-lo conosco, faça seu cadastro e fique por dentro
                 de todas as atualizações de criptomoedas em tempo real, o cadastro é muito

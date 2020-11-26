@@ -5,12 +5,16 @@ export const Formulario = styled.div`
     min-width:500px;
     min-height:600px;
     margin: 0 auto;
-    margin-top: 0.5%;
+    margin-top: 3%;
     background-color: #FFF;
     padding: 20px;
     border-radius:5px;
     overflow-y: hidden;
     height:50%;
+    @media(max-width: 470px){
+        margin: 0 auto;
+        margin-top: 0;
+    }
 
        .btn-cad{
         width:200px;

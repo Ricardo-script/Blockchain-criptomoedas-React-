@@ -35,7 +35,6 @@ class Cadastro extends Component{
             name:"", 
             code:"",
             email:"",
-            password:"", 
             born_date: "", 
             cellphone: "", 
             telephone: "", 
@@ -84,13 +83,7 @@ class Cadastro extends Component{
         });
             return;
         }
-        if(this.state.password === ''){
-            this.setState({msg: 'Por favor preeencher o campo com sua senha',
-            openModal: true, resposta:'Por favor conferir os campos!',
-            msgerro:'Para continuar o cadastro por favor corrigir os campos!'
-        });
-            return;
-        }
+        
         if(this.state.born_date === ''){
             this.setState({msg: 'Por favor preeencher o campo com sua data de nascimento',
             openModal: true, resposta:'Por favor conferir os campos!',
@@ -139,12 +132,7 @@ class Cadastro extends Component{
         });
             return;
         }
-        if(this.state.password !== this.state.repeteSenha){
-            alert('Repetição de senha incorreta por favor verificar!');
-            this.setState({openModal:false});
-            return;
-        }
-
+        
         const data = JSON.stringify(this.state);
         let url = 'https://clients-control-api.herokuapp.com/clients-control-api/client'
 
@@ -159,8 +147,8 @@ class Cadastro extends Component{
         // verificação no servidor:
         if(response.status === 400){
             const respostaJson = await response.json();
-            //console.log(respostaJson);
-            //alert(respostaJson.error.error_message);
+            console.log(respostaJson);
+            alert(respostaJson.error.error_message);
             this.setState({msg: respostaJson.error.error_message});
             this.setState({resposta:'Por favor conferir os campos!'});
             this.setState({msgerro:'Para continuar o cadastro por favor corrigir os campos!'}); 
@@ -223,7 +211,6 @@ class Cadastro extends Component{
                             {this.state.btnacesso}
                         </Button>
                     </div>
-
 
                 </Modal>
 
@@ -327,52 +314,32 @@ class Cadastro extends Component{
                                     id="exampleSelect"
                                     placeholder="UF"
                                     className="infoStyle"
-                                    value="SP"
                                     onChange={(e) => this.setState({state: e.target.value})} 
                                 >
                                     <option value="SP">SP</option>
-                                    <option value="SP">AC</option>
-                                    <option value="SP">AL</option>
-                                    <option value="SP">AP</option>
-                                    <option value="SP">AM</option>
-                                    <option value="SP">BA</option>
-                                    <option value="SP">CE</option>
-                                    <option value="SP">ES</option>
-                                    <option value="SP">GO</option>
-                                    <option value="SP">MA</option>
-                                    <option value="SP">MT</option>
-                                    <option value="SP">MS</option>
-                                    <option value="SP">MG</option>
-                                    <option value="SP">PA</option>
-                                    <option value="SP">PR</option>
-                                    <option value="SP">PE</option>
-                                    <option value="SP">PI</option>
-                                    <option value="SP">RJ</option>
-                                    <option value="SP">RN</option>
-                                    <option value="SP">RS</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
                                 </Input>
                             </Form.Group>
                         </Form.Row>
-                      
-                        <Form.Row>
-                            <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Label>Senha</Form.Label>
-                                    <Form.Control 
-                                        type="password" 
-                                        placeholder="Senha" 
-                                        className="senhaInput"
-                                        onChange={(e) => this.setState({password: e.target.value})}
-                                    />
-                                </Form.Group>
-                                <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Label>Confirmar Senha</Form.Label>
-                                    <Form.Control type="password" 
-                                    placeholder="Confirmar senha" 
-                                    className="senhaInput"
-                                    onChange={(e) => this.setState({repeteSenha: e.target.value})}
-                                    />
-                            </Form.Group>
-                        </Form.Row>
+
                         <AreaButton>
                             <Button variant="primary" className="btn-cad" type="button" onClick={this.btnCadastrarOnClick}>
                                 Cadastrar
