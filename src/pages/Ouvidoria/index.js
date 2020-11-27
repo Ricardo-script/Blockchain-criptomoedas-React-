@@ -22,11 +22,16 @@ class Ouvidoria extends Component{
 
     this.tocar = this.tocar.bind(this);
     this.btnEnviar = this.btnEnviar.bind(this);
+    this.fimSend = this.fimSend.bind(this);
   }
   
   tocar(){
     const audio = document.querySelector('audio');
     audio.play(); 
+  }
+
+  fimSend(){
+    window.location.href = "/";
   }
 
   async btnEnviar(){
@@ -100,12 +105,12 @@ class Ouvidoria extends Component{
                   <p>
                     Mensagem enviada!<hr/><br/>
                     Obrigado por nos contactar, em breve responderemos a sua mensagem
-                    nos seu e-mail
+                    no seu e-mail
                   </p>
                   <CapaSend src={msgSend} alt="" />
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button variant="secondary" onClick={handleCloseb}>
+                  <Button variant="secondary" onClick={this.fimSend}>
                     Ok, Entendi!
                   </Button>
                 </Modal.Footer>
