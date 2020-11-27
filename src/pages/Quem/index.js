@@ -17,9 +17,9 @@ const Quem = () => (
                 />
                 <Carousel.Caption>
                 <h3>Consquistando liberdade financeira de seus clientes</h3>
-                <p>Com Tecnologia de ponta, segurança e rapidez, Somos umas das
+                <p><strong>Com Tecnologia de ponta, segurança e rapidez, Somos umas das
                    maiores empresas de bitcoins do Brasil.
-                </p>
+                </strong></p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item  className="carousel">
@@ -31,9 +31,9 @@ const Quem = () => (
 
                 <Carousel.Caption>
                 <h3 style={{color: ' orange '}}>Paixão pelo trabalho</h3>
-                <p style={{color: ' #FFF '}}>Amamos o nosso trabalho, dedicação,
+                <p style={{color: ' #FFF '}}><strong>Amamos o nosso trabalho, dedicação,
                 vislumbramos um futuro melhor e queremos deixar nossa marca
-                </p>
+                </strong></p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item  className="carousel"> 
@@ -46,7 +46,8 @@ const Quem = () => (
 
                 <Carousel.Caption>
                 <h3>Realização dos sonhos</h3>
-                <p style={{color: ' #40FF00 '}}>Nosso compromisso com você é simplificar para a realização de seus sonhos</p>
+                <p style={{color: '#40FF00'}}><strong>Nosso compromisso com você é simplificar 
+                para a realização de seus sonhos</strong></p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

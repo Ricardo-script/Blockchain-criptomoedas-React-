@@ -45,7 +45,7 @@ const Home = (props) => {
                 Olá! Somos a Factorybit, estamos muito felizes por receber você!
                 Somos uma empresa que oferece serviços baseados na tecnologia Blockchain
                 e estamos ansiosos por te-lo conosco, faça seu cadastro e fique por dentro
-                de todas as atualizações de criptomoedas em tempo real, o cadastro é muito
+                de todas as noticias de criptomoedas, o cadastro é muito
                 simples, seguro, rapido e gratuito
             </ModalBody>
             <Asset src={Assistente} alt="" />

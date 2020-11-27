@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { AreaForm, CapaImg, Audio } from  './style';
+import { AreaForm, CapaImg, Audio, CapaSend } from  './style';
 import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 import Modal from 'react-bootstrap/Modal'
 import imgOuvidoria from '../../assets/ouvidoria.jpg';
 import voz from '../../assets/voz.mp3';
 import mic from '../../assets/mic.png';
+import msgSend from '../../assets/msgSend.png';
+import mensagem from '../../assets/mensagem.mp3';
 
 
 class Ouvidoria extends Component{
@@ -12,9 +14,10 @@ class Ouvidoria extends Component{
     super(props);
     this.state = {
       show:true,
+      showb:false,
       email:'',
       username:'',
-      message:''
+      message:'',
     }
 
     this.tocar = this.tocar.bind(this);
@@ -36,7 +39,9 @@ class Ouvidoria extends Component{
         'content-type': 'application/json'
       },
       body: data
-    })
+    }); 
+
+    
 
     // verificação no servidor:
     if(response.status === 400){
@@ -44,13 +49,17 @@ class Ouvidoria extends Component{
       alert(respostaJson.error.error_message);
     } 
     if(response.status === 201){
-        alert("foi");
-      }
+      //inserir modal
+      this.setState({username:'',email:'', message:''});
+      this.setState({showb:true});
     }
+
+  }
 
   render(){
 
     const handleClose = () => this.setState({show:false});
+    const handleCloseb = () => this.setState({showb:false});
 
       return(
         <AreaForm>
@@ -78,7 +87,31 @@ class Ouvidoria extends Component{
                   </Button>
                 </Modal.Footer>
               </Modal>
-              
+
+
+
+              <Modal show={this.state.showb} onHide={handleCloseb} animation={true}>
+                <Modal.Header closeButton>
+                  <Modal.Title><span>Mensagem Enviada</span></Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <audio src={mensagem}></audio>
+                <label onClick={this.tocar}><Audio src={mic} alt=""/></label>
+                  <p>
+                    Mensagem enviada!<hr/><br/>
+                    Obrigado por nos contactar, em breve responderemos a sua mensagem
+                    nos seu e-mail
+                  </p>
+                  <CapaSend src={msgSend} alt="" />
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleCloseb}>
+                    Ok, Entendi!
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+
             <FormGroup>
               <Label for="name">Digite seu Nome</Label>
               <Input 
@@ -110,17 +143,11 @@ class Ouvidoria extends Component{
                 onChange={(e) => this.setState({message: e.target.value})} 
               />
             </FormGroup>
-
-            <FormGroup check>
-              <Label check>
-                <Input type="checkbox"/>{' '}
-                  Eu não sou um robô!
-                </Label>
-              </FormGroup>
-                     
+                               
               <Button variant="primary" className="btn-cad" type="button" onClick={this.btnEnviar}>
                 Enviar
               </Button>
+    
           </Form>
         </Container>
       </AreaForm>

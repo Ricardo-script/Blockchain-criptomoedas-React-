@@ -7,16 +7,22 @@ export const AreaForm = styled.div`
     padding:2%;
     border-radius:5px;
 
-    #areaForm{
- 
+   
+    .btn-cad{
+       width: 20%;
+       min-width: 110px;
     }
 
     @media(max-width:470px){
         width:95%;
 
         #areaForm{
-        padding:5%;
-    }
+            padding:5%;
+        }
+
+        .btn-cad{
+            width: 20vw;
+        }
         
     }
 
@@ -31,6 +37,7 @@ export const AreaForm = styled.div`
     .title{
         color:#585858;
     }
+
 `;
 
 
@@ -38,6 +45,15 @@ export const CapaImg = styled.img`
     width: 100%;
     margin: 0 auto;
 `;
+
+export const CapaSend = styled.img`
+    width: 70%;
+    margin: 0 auto;
+`;
 export const Audio = styled.img`
     width:10%;
 `;
+
+
+
+

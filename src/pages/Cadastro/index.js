@@ -147,8 +147,8 @@ class Cadastro extends Component{
         // verificação no servidor:
         if(response.status === 400){
             const respostaJson = await response.json();
-            console.log(respostaJson);
-            alert(respostaJson.error.error_message);
+            //console.log(respostaJson);
+            //alert(respostaJson.error.error_message);
             this.setState({msg: respostaJson.error.error_message});
             this.setState({resposta:'Por favor conferir os campos!'});
             this.setState({msgerro:'Para continuar o cadastro por favor corrigir os campos!'}); 
@@ -158,7 +158,7 @@ class Cadastro extends Component{
             this.setState({msg: 'Seja muito bem vindo!',
                 resposta:'Usuário cadastrado com sucesso',
                 msgerro:'Ficamos felizes por te-lo conosco!',
-                btnacesso:'Login',
+                btnacesso:'Inicio',
                 btnvoltar:'Voltar',
                 autenticado:true
             });
